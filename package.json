@@ -6,6 +6,7 @@
   "scripts": {
     "build": "webpack",
     "start": "webpack-dev-server",
+    "lint": "eslint . --ext .js --ext .jsx",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -13,6 +14,8 @@
   "license": "ISC",
   "devDependencies": {
     "css-loader": "^0.24.0",
+    "eslint": "^3.4.0",
+    "eslint-plugin-react": "^6.2.0",
     "npm-install-webpack-plugin": "^4.0.4",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.2",
