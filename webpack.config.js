@@ -2,8 +2,8 @@ const path = require('path');
 
 // tell it where to look
 const PATHS = {
-  app: path.join(_dirname, 'app'),
-  build: path.join(_dirname, 'build')
+  app: path.join(__dirname, 'app'),
+  build: path.join(__dirname, 'build')
 };
 
 module.exports = {
