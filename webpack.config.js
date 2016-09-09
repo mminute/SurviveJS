@@ -2,6 +2,7 @@ const path = require('path');
 const merge = require('webpack-merge');
 const webpack = require('webpack');
 const NpmInstallPlugin = require('npm-install-webpack-plugin');
+const stylelint = require('stylelint');
 
 const TARGET = process.env.npm_lifecycle_event;
 
@@ -38,8 +39,20 @@ const common = {
         test: /\.jsx?$/,
         loaders: ['eslint'],
         include: PATHS.app
+      },
+      {
+        test: /\.css$/,
+        loaders: ['postcss'],
+        include: PATHS.app
       }
     ]
+  },
+  postcss: function() {
+    return [stylelint({
+      rules: {
+        'color-hex-case': 'lower'
+      }
+    })];
   }
 };
 

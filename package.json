@@ -18,7 +18,9 @@
     "eslint-loader": "^1.5.0",
     "eslint-plugin-react": "^6.2.0",
     "npm-install-webpack-plugin": "^4.0.4",
+    "postcss-loader": "^0.13.0",
     "style-loader": "^0.13.1",
+    "stylelint": "^7.2.0",
     "webpack": "^1.13.2",
     "webpack-dev-server": "^1.15.1",
     "webpack-merge": "^0.14.1"
