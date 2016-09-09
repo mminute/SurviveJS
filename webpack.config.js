@@ -32,6 +32,13 @@ const common = {
         // Include accepts either a path or an array of paths.
         include: PATHS.app
       }
+    ],
+    preLoaders: [
+      {
+        test: /\.jsx?$/,
+        loaders: ['eslint'],
+        include: PATHS.app
+      }
     ]
   }
 };
