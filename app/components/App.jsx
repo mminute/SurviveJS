@@ -1,8 +1,34 @@
 import React, {Component} from 'react';
-import Note from './Note.jsx';
+import uuid from 'node-uuid';
 
 export default class App extends Component {
     render() {
-        return <Note />;
+        const notes = [
+            {
+                id: uuid.v4(),
+                task: 'Learn Webpack'
+            },
+            {
+                id: uuid.v4(),
+                task: 'Learn React'
+            },
+            {
+                id: uuid.v4(),
+                task: 'Do Laundry'
+            }
+        ];
+        return (
+            <div>
+                <ul>
+                    {
+                        notes.map(note =>
+                            <li key={note.id}>
+                                {note.task}
+                            </li>
+                        )
+                    }
+                </ul>
+            </div>
+        );
     }
 }
