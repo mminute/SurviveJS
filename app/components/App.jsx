@@ -6,7 +6,7 @@ export default class App extends Component {
         super(props);
 
         this.state = {
-            notes : [
+            notes: [
                 {
                     id: uuid.v4(),
                     task: 'Learn Webpack'
@@ -20,11 +20,24 @@ export default class App extends Component {
                     task: 'Do Laundry'
                 }
             ]
-        }
+        };
     }
+
+    addNote() {
+        const notes = this.state.notes.concat([{
+            id: uuid.v4(),
+            task: 'newTask'
+        }]);
+
+        this.setState({notes: notes});
+    }
+
     render() {
         return (
             <div>
+                <button onClick={this.addNote.bind(this)}>
+                    +
+                </button>
                 <ul>
                     {
                         this.state.notes.map(note =>
