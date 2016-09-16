@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import uuid from 'node-uuid';
+import Notes from './Notes';
 
 export default class App extends Component {
     constructor(props) {
@@ -30,20 +31,14 @@ export default class App extends Component {
     }
 
     render() {
+        const { notes } = this.state;
+
         return (
             <div>
                 <button onClick={this.addNote}>
                     +
                 </button>
-                <ul>
-                    {
-                        this.state.notes.map(note =>
-                            <li key={note.id}>
-                                {note.task}
-                            </li>
-                        )
-                    }
-                </ul>
+                <Notes notes={notes} />
             </div>
         );
     }
