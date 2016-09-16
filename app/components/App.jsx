@@ -23,7 +23,7 @@ export default class App extends Component {
         };
     }
 
-    addNote() {
+    addNote = () => {
         const notes = this.state.notes.concat([{
             id: uuid.v4(),
             task: 'newTask'
@@ -35,7 +35,7 @@ export default class App extends Component {
     render() {
         return (
             <div>
-                <button onClick={this.addNote.bind(this)}>
+                <button onClick={this.addNote}>
                     +
                 </button>
                 <ul>
