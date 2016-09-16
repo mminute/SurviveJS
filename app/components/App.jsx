@@ -24,12 +24,9 @@ export default class App extends Component {
     }
 
     addNote = () => {
-        const notes = this.state.notes.concat([{
-            id: uuid.v4(),
-            task: 'newTask'
-        }]);
+        const notes = [...this.state.notes, {id: uuid.v4(), task: 'newTask'}];
 
-        this.setState({notes: notes});
+        this.setState({notes});
     }
 
     render() {
