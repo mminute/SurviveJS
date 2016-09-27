@@ -38,9 +38,10 @@ export default class Note extends Component {
 
         return (
             <div onClick={this.edit}>
-                <span>{this.props.task}</span>
+                <span className="task">{this.props.task}</span>
                 {onDeleteNote ?
                     <button
+                        className="deleteNote"
                         onClick={onDeleteNote}
                     >
                         X

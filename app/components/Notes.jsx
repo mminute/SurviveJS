@@ -3,9 +3,9 @@ import Note from './Note';
 
 export default ({notes, onEditNote, onDeleteNote}) => {
     return (
-        <ul>
+        <ul className="notes">
             {notes.map(note =>
-                <li key={note.id}>
+                <li className="note" key={note.id}>
                     <Note
                         task={note.task}
                         onDeleteNote={onDeleteNote.bind(null, note.id)}

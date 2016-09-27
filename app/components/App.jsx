@@ -63,7 +63,7 @@ export default class App extends Component {
 
         return (
             <div>
-                <button onClick={this.addNote}>
+                <button className="addNote" onClick={this.addNote}>
                     +
                 </button>
                 <Notes
