@@ -30,6 +30,17 @@ export default class App extends Component {
         this.setState({notes});
     }
 
+    handleDeleteNote = (id, e) => {
+        // Avoid bubbling to edit
+        if (e) {
+            e.stopPropagation();
+        }
+
+        const notes = this.state.notes.filter(note => note.id !== id);
+
+        this.setState({notes});
+    }
+
     handleEditNote = (id, task) => {
         // Don't modify if trying to set an empty value
         if (!task.trim()) {
@@ -57,6 +68,7 @@ export default class App extends Component {
                 </button>
                 <Notes
                     notes={notes}
+                    onDeleteNote={this.handleDeleteNote}
                     onEditNote={this.handleEditNote}
                 />
             </div>
