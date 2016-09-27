@@ -30,6 +30,23 @@ export default class App extends Component {
         this.setState({notes});
     }
 
+    handleEditNote = (id, task) => {
+        // Don't modify if trying to set an empty value
+        if (!task.trim()) {
+            return;
+        }
+
+        const notes = this.state.notes.map(note => {
+            if (note.id === id && task) {
+                note.task = task;
+            }
+
+            return note;
+        });
+
+        this.setState({notes});
+    }
+
     render() {
         const { notes } = this.state;
 
@@ -38,7 +55,10 @@ export default class App extends Component {
                 <button onClick={this.addNote}>
                     +
                 </button>
-                <Notes notes={notes} />
+                <Notes
+                    notes={notes}
+                    onEditNote={this.handleEditNote}
+                />
             </div>
         );
     }
