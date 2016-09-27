@@ -2,6 +2,7 @@
 // You must specify the features to use through the ecmaFeatures property
 {
   "extends": "eslint:recommended",
+  "parser": "babel-eslint",
 
   "parserOptions": {
     "ecmaVersion": 6,
