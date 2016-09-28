@@ -32,7 +32,11 @@ class NoteStore {
     this.setState({notes});
   }
 
-  delete(id) {}
+  delete(id) {
+    this.setState({
+      notes: this.notes.filter(note => note.id !== id)
+    });
+  }
 }
 
 export default alt.createStore(NoteStore, 'NoteStore');
