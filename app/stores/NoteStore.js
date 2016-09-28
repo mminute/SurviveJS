@@ -17,7 +17,20 @@ class NoteStore {
     this.setState({notes})
   }
 
-  update(updatedNote) {}
+  update(updatedNote) {
+    const notes = this.notes.map(note => {
+      if (note.id === updatedNote.id) {
+        // Object.assign is used to patch the note data here.
+        // It mutates the target (first parameter).
+        // In order to avoid this we use an empty object as the target
+        // and apply data to it.  You can pass as many args as desired
+        return Object.assign({}, note, updatedNote);
+      }
+      return note;
+    });
+
+    this.setState({notes});
+  }
 
   delete(id) {}
 }
