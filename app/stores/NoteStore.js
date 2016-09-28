@@ -15,3 +15,5 @@ class NoteStore {
 
   delete(id) {}
 }
+
+export default alt.createStore(NoteStore, 'NoteStore');
